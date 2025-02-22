@@ -2,8 +2,8 @@ import os
 import cv2
 import numpy as np
 import concurrent.futures
-from . import utils
-from . import render
+import utils
+import render
 
 
 def create_video_from_htmls(
@@ -24,7 +24,7 @@ def create_video_from_htmls(
         html_file_paths,
         threads=threads,
         script_to_append=script_to_append,
-        inplace=append_inplace,
+        append_inplace=append_inplace,
         render_wait_max=render_wait_max,
         post_render_wait=post_render_wait,
         )

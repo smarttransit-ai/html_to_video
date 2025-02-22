@@ -28,7 +28,7 @@ def batch_files(html_file_paths, threads):
     '''
     Nest a list of file paths into batches for parallel processing.
     '''
-    batch_size = len(html_file_paths) // threads
+    batch_size = max(1, len(html_file_paths) // threads)
     batches = [html_file_paths[i:i+batch_size]
-               for i in range(0, len(html_file_paths), batch_size)]
+               for i in range(0, len(html_file_paths) + 1, batch_size)]
     return batches
